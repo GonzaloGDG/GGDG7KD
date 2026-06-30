@@ -1,0 +1,660 @@
+[gd_scene load_steps=18 format=3 uid="uid://d3mgxl56hbahq"]
+
+[ext_resource type="Script" uid="uid://b5fab7mjxrp2m" path="res://UI/Scripts/ui.gd" id="1_tqd2b"]
+[ext_resource type="StyleBox" uid="uid://bsv6837eipfae" path="res://Assets/UI/button_hover.tres" id="3_fiuhc"]
+[ext_resource type="StyleBox" uid="uid://ba74ygg56p6ei" path="res://Assets/UI/button_normal.tres" id="4_43o41"]
+[ext_resource type="Texture2D" uid="uid://c26aubwte1k2y" path="res://Assets/UI/PNG/panelInset_brown.png" id="5_gu0x8"]
+[ext_resource type="Theme" uid="uid://cit1k5cmt4f35" path="res://Assets/UI/UI.tres" id="5_pgf46"]
+[ext_resource type="Texture2D" uid="uid://cx43jgd84nw36" path="res://Assets/UI/PNG/buttonLong_brown_dark.png" id="6_sdgfl"]
+[ext_resource type="Texture2D" uid="uid://c0oqv6lg573uv" path="res://Assets/UI/PNG/panel_brown.png" id="7_gu0x8"]
+[ext_resource type="Texture2D" uid="uid://1sowy1unkifg" path="res://Assets/UI/PNG/buttonSquare_beige.png" id="9_gmkrm"]
+[ext_resource type="Script" uid="uid://cbxojn5abgyfl" path="res://UI/Scripts/citizen_info.gd" id="9_puf64"]
+[ext_resource type="Texture2D" uid="uid://bxocblk2gjdya" path="res://Assets/UI/PNG/barBlue_horizontalBlue.png" id="10_puf64"]
+[ext_resource type="Texture2D" uid="uid://cuk7ubx48gy7h" path="res://Assets/UI/PNG/barGreen_horizontalMid.png" id="11_sdgfl"]
+[ext_resource type="Script" uid="uid://1us28d6qufg2" path="res://UI/Scripts/building_info.gd" id="12_6q2ik"]
+[ext_resource type="Texture2D" uid="uid://wxa1qpcq3rqd" path="res://Objects/Buildings/Icon/FarmIcon.png" id="12_npmjx"]
+[ext_resource type="Script" uid="uid://bktn7vhlse8ly" path="res://UI/Scripts/city_info.gd" id="12_u6hof"]
+[ext_resource type="Texture2D" uid="uid://caa76qoxn1y6s" path="res://Assets/Buildings/city.png" id="13_thdbn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43o41"]
+
+[sub_resource type="Theme" id="Theme_43o41"]
+Button/styles/focus = SubResource("StyleBoxEmpty_43o41")
+Button/styles/hover = ExtResource("3_fiuhc")
+Button/styles/normal = ExtResource("4_43o41")
+
+[node name="Ui" type="Control" node_paths=PackedStringArray("gold_label", "reputation_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = 34.0
+offset_right = -18.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.01062, 1.0187)
+mouse_filter = 2
+script = ExtResource("1_tqd2b")
+gold_label = NodePath("Top Bar2/NinePatchRect/HBoxContainer/labelGoldValue")
+reputation_label = NodePath("Top Bar2/NinePatchRect/HBoxContainer/LabelReputationValue")
+
+[node name="Top Bar" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 1
+offset_right = 117.0
+offset_bottom = 60.0
+scale = Vector2(1.00749, 1)
+texture = ExtResource("7_gu0x8")
+region_rect = Rect2(0, 0, 99.771, 99.595)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 12
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Top Bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -13.5
+offset_right = 26.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Top Bar/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_43o41")
+text = "Menu"
+
+[node name="Top Bar2" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -409.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 51.0
+grow_horizontal = 0
+scale = Vector2(0.995354, 1.02971)
+texture = ExtResource("5_gu0x8")
+region_rect = Rect2(0, 0.910181, 93.8087, 93.9324)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 6
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Top Bar2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_sdgfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Top Bar2/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.5
+offset_top = -13.5
+offset_right = 119.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelReputation" type="Label" parent="Top Bar2/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_pgf46")
+text = "Reputation: "
+
+[node name="LabelReputationValue" type="Label" parent="Top Bar2/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_pgf46")
+text = "10"
+
+[node name="Control2" type="Control" parent="Top Bar2/NinePatchRect/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="labelGold" type="Label" parent="Top Bar2/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_pgf46")
+text = "Gold: "
+
+[node name="labelGoldValue" type="Label" parent="Top Bar2/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_pgf46")
+text = "1000"
+
+[node name="MiniMap" type="NinePatchRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -122.0
+offset_right = 122.0
+offset_bottom = -14.0
+grow_vertical = 0
+scale = Vector2(0.995354, 1.02971)
+texture = ExtResource("5_gu0x8")
+region_rect = Rect2(0.936699, 1.26068, 92.8809, 92.5304)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 12
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MiniMap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_sdgfl")
+region_rect = Rect2(0, 0, 190, 49)
+patch_margin_left = 12
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 13
+
+[node name="CitizenInfo" type="NinePatchRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -171.0
+offset_top = -375.0
+offset_right = 5.0
+offset_bottom = -159.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.00366, 0.991726)
+texture = ExtResource("5_gu0x8")
+region_rect = Rect2(0.555969, 1.61117, 91.9152, 92.3489)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 12
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("9_puf64")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CitizenInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_sdgfl")
+region_rect = Rect2(0, 0, 190, 49)
+patch_margin_left = 12
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 13
+script = ExtResource("9_puf64")
+
+[node name="lifeProgresBar" type="TextureProgressBar" parent="CitizenInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 12.1461
+offset_top = 89.7222
+offset_right = 142.146
+offset_bottom = 100.722
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("11_sdgfl")
+texture_progress = ExtResource("11_sdgfl")
+tint_under = Color(1, 1, 1, 0.235294)
+tint_progress = Color(0.737255, 1, 1, 1)
+
+[node name="job" type="Label" parent="CitizenInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 63.412
+offset_top = 36.2712
+offset_right = 139.412
+offset_bottom = 59.2712
+text = "Job"
+
+[node name="experienceProgresBar" type="TextureProgressBar" parent="CitizenInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 12.1461
+offset_top = 108.529
+offset_right = 142.146
+offset_bottom = 119.529
+nine_patch_stretch = true
+texture_under = ExtResource("10_puf64")
+texture_progress = ExtResource("10_puf64")
+tint_under = Color(1, 1, 1, 0.235294)
+tint_progress = Color(0.737255, 1, 1, 1)
+
+[node name="level" type="Label" parent="CitizenInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 61.4403
+offset_top = 59.0374
+offset_right = 137.44
+offset_bottom = 82.0374
+text = "Level: "
+
+[node name="Name" type="Label" parent="CitizenInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 44.6803
+offset_top = 9.54575
+offset_right = 120.68
+offset_bottom = 32.5458
+text = "Name"
+
+[node name="icon" type="TextureRect" parent="CitizenInfo/NinePatchRect"]
+layout_mode = 2
+offset_left = 12.1461
+offset_top = 34.2916
+offset_right = 57.1461
+offset_bottom = 83.2916
+texture = ExtResource("9_gmkrm")
+
+[node name="image" type="TextureRect" parent="CitizenInfo/NinePatchRect/icon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Actions" type="GridContainer" parent="CitizenInfo/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -82.0
+offset_right = -9.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 4
+
+[node name="BuildingInfo" type="NinePatchRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -375.0
+offset_right = 5.0
+offset_bottom = -87.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.00366, 0.991726)
+texture = ExtResource("5_gu0x8")
+region_rect = Rect2(0.555969, 1.61117, 91.9152, 92.3489)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 12
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("12_6q2ik")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BuildingInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_sdgfl")
+region_rect = Rect2(0, 0, 190, 49)
+patch_margin_left = 12
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 13
+
+[node name="lifeProgresBar" type="TextureProgressBar" parent="BuildingInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 22.9908
+offset_top = 101.554
+offset_right = 152.991
+offset_bottom = 112.554
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("11_sdgfl")
+texture_progress = ExtResource("11_sdgfl")
+tint_under = Color(1, 1, 1, 0.235294)
+tint_progress = Color(0.737255, 1, 1, 1)
+
+[node name="Name" type="Label" parent="BuildingInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 14.0122
+offset_top = 10.4898
+offset_right = 90.0119
+offset_bottom = 33.4898
+text = "Name"
+
+[node name="Workers" type="Label" parent="BuildingInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 12.0404
+offset_top = 116.402
+offset_right = 88.0401
+offset_bottom = 139.402
+text = "Workers:"
+
+[node name="WNumber" type="Label" parent="BuildingInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 95.8405
+offset_top = 158.965
+offset_right = 135.84
+offset_bottom = 179.965
+text = "0/2"
+
+[node name="image" type="TextureRect" parent="BuildingInfo/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 30.0
+offset_right = 32.0
+offset_bottom = 94.0
+grow_horizontal = 2
+texture = ExtResource("12_npmjx")
+
+[node name="WorkersButton" type="Button" parent="BuildingInfo/NinePatchRect"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.1007
+offset_top = 145.107
+offset_right = -14.1007
+offset_bottom = 193.107
+grow_horizontal = 2
+theme = SubResource("Theme_43o41")
+
+[node name="image" type="TextureRect" parent="BuildingInfo/NinePatchRect/WorkersButton"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="BuildingInfo/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -76.0
+offset_right = 67.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="CityInfo" type="NinePatchRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -204.326
+offset_top = -384.23
+offset_right = 1.67395
+offset_bottom = -150.23
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.00366, 0.991726)
+texture = ExtResource("5_gu0x8")
+region_rect = Rect2(0.555969, 1.61117, 91.9152, 92.3489)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 12
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("12_u6hof")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CityInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_sdgfl")
+region_rect = Rect2(0, 0, 190, 49)
+patch_margin_left = 12
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 13
+
+[node name="HapyProgressBar" type="TextureProgressBar" parent="CityInfo/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 17.0
+offset_right = 60.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("11_sdgfl")
+texture_progress = ExtResource("11_sdgfl")
+tint_under = Color(1, 1, 1, 0.235294)
+tint_progress = Color(0.737255, 1, 1, 1)
+
+[node name="Population" type="Label" parent="CityInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 79.5212
+offset_top = 44.1899
+offset_right = 162.521
+offset_bottom = 67.1899
+text = "Population: "
+
+[node name="Idle" type="Label" parent="CityInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 79.5212
+offset_top = 65.9662
+offset_right = 139.521
+offset_bottom = 88.9662
+text = "Idle:"
+
+[node name="Taxes" type="Label" parent="CityInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 32.1424
+offset_top = 108.705
+offset_right = 92.1422
+offset_bottom = 131.705
+text = "Taxes"
+
+[node name="OptionButton" type="OptionButton" parent="CityInfo/NinePatchRect"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.15421
+offset_top = -9.29465
+offset_right = 51.1542
+offset_bottom = 10.7054
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="CityInfo/NinePatchRect"]
+layout_mode = 0
+offset_left = 44.6803
+offset_top = 9.54575
+offset_right = 120.68
+offset_bottom = 32.5458
+text = "Name"
+
+[node name="image" type="TextureRect" parent="CityInfo/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5612
+offset_top = -92.4406
+offset_right = -24.5612
+offset_bottom = -28.4406
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_thdbn")
+
+[node name="GridContainer" type="GridContainer" parent="CityInfo/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.5
+offset_top = -77.0
+offset_right = 77.5
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="BuildingButton" type="Button" parent="CityInfo/NinePatchRect/GridContainer"]
+layout_mode = 2
+theme = ExtResource("5_pgf46")
+text = "Buildings
+"
+
+[node name="Citizens" type="Button" parent="CityInfo/NinePatchRect/GridContainer"]
+layout_mode = 2
+theme = ExtResource("5_pgf46")
+text = "Citizens
+"
+
+[node name="TrainButton" type="Button" parent="CityInfo/NinePatchRect/GridContainer"]
+layout_mode = 2
+theme = ExtResource("5_pgf46")
+text = "Train
+"
+
+[node name="MarketButton" type="Button" parent="CityInfo/NinePatchRect/GridContainer"]
+layout_mode = 2
+theme = ExtResource("5_pgf46")
+text = "Market
+"
+
+[node name="CityDetailPanel" type="NinePatchRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -317.0
+offset_top = -136.0
+offset_right = 10.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.995354, 1.02971)
+texture = ExtResource("5_gu0x8")
+region_rect = Rect2(0.936699, 1.26068, 92.8809, 92.5304)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 12
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="CityDetail" type="NinePatchRect" parent="CityDetailPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_sdgfl")
+region_rect = Rect2(0, 0, 190, 49)
+patch_margin_left = 12
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 13
+
+[node name="MarginContainer" type="MarginContainer" parent="CityDetailPanel/CityDetail"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="CityDetailPanel/CityDetail/MarginContainer"]
+layout_mode = 2
+columns = 4
+
+[connection signal="item_selected" from="CityInfo/NinePatchRect/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="CityInfo/NinePatchRect/GridContainer/BuildingButton" to="." method="_on_building_button_pressed"]
+[connection signal="pressed" from="CityInfo/NinePatchRect/GridContainer/Citizens" to="." method="_on_citizens_button_pressed"]
+[connection signal="pressed" from="CityInfo/NinePatchRect/GridContainer/TrainButton" to="." method="_on_train_button_pressed"]
+[connection signal="pressed" from="CityInfo/NinePatchRect/GridContainer/MarketButton" to="." method="_on_market_button_pressed"]

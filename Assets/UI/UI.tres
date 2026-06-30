@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cit1k5cmt4f35"]
+
+[ext_resource type="StyleBox" uid="uid://bsv6837eipfae" path="res://Assets/UI/button_hover.tres" id="1_3psh6"]
+[ext_resource type="FontFile" uid="uid://ce206c5lasgpb" path="res://Assets/New_Rocker/NewRocker-Regular.ttf" id="1_f0h75"]
+[ext_resource type="StyleBox" uid="uid://ba74ygg56p6ei" path="res://Assets/UI/button_normal.tres" id="2_nnlnh"]
+[ext_resource type="Texture2D" uid="uid://dgf885e654wgg" path="res://Assets/UI/PNG/buttonLong_brown.png" id="3_3lbhk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0h75"]
+texture = ExtResource("3_3lbhk")
+
+[resource]
+Button/font_sizes/font_size = 12
+Button/fonts/font = ExtResource("1_f0h75")
+Button/styles/hover = ExtResource("1_3psh6")
+Button/styles/normal = ExtResource("2_nnlnh")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 12
+Panel/styles/panel = SubResource("StyleBoxTexture_f0h75")
+RichTextLabel/font_sizes/normal_font_size = 8

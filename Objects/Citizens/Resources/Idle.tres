@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CitizenType" load_steps=3 format=3 uid="uid://caessc5hyjjwl"]
+
+[ext_resource type="Script" uid="uid://mv6riuuaf8bq" path="res://Objects/Citizens/Resources/CitizenType.gd" id="1_sjfy0"]
+[ext_resource type="Texture2D" uid="uid://d07h048m8sfdg" path="res://Objects/Citizens/Icons/CitizenIdle.png" id="1_vaxiy"]
+
+[resource]
+script = ExtResource("1_sjfy0")
+gender = 0
+profession = 0
+train_cost = 0
+icon = ExtResource("1_vaxiy")
+maintenance_cost = 0
+pay_taxes = false
+actions = Array[int]([])
+metadata/_custom_type_script = "uid://mv6riuuaf8bq"

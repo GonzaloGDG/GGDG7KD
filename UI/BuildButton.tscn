@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://do7y1thjsp70y"]
+
+[ext_resource type="Script" uid="uid://cx55ak2fyxeq0" path="res://UI/Scripts/build_button.gd" id="1_cdt3p"]
+
+[node name="BuildButton" type="Control"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cdt3p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceData" load_steps=3 format=3 uid="uid://cgvd5118f82lt"]
+
+[ext_resource type="Texture2D" uid="uid://dgpxn0ylh840g" path="res://Resources/Iconos/wheat.png" id="1_lrl2p"]
+[ext_resource type="Script" uid="uid://c5dht7rha3lqq" path="res://Resources/Scripts/resource_data.gd" id="2_ldqkj"]
+
+[resource]
+script = ExtResource("2_ldqkj")
+id = "02"
+display_name = "Wheat"
+icon = ExtResource("1_lrl2p")
+metadata/_custom_type_script = "uid://c5dht7rha3lqq"

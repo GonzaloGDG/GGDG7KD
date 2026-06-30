@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CitizenType" load_steps=3 format=3 uid="uid://cf038rrrxx744"]
+
+[ext_resource type="Texture2D" uid="uid://chv2h2i66l0l6" path="res://Objects/Citizens/Icons/Builder_Icon.png" id="1_g4c5g"]
+[ext_resource type="Script" uid="uid://mv6riuuaf8bq" path="res://Objects/Citizens/Resources/CitizenType.gd" id="2_dvna6"]
+
+[resource]
+script = ExtResource("2_dvna6")
+gender = 0
+profession = 2
+train_cost = 40
+icon = ExtResource("1_g4c5g")
+maintenance_cost = 0
+pay_taxes = true
+actions = Array[int]([0])
+metadata/_custom_type_script = "uid://mv6riuuaf8bq"

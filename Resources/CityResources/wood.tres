@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceData" load_steps=3 format=3 uid="uid://mb22qlns2y2u"]
+
+[ext_resource type="Texture2D" uid="uid://cqndgjeo8hroa" path="res://Resources/Iconos/wood.png" id="1_eywve"]
+[ext_resource type="Script" uid="uid://c5dht7rha3lqq" path="res://Resources/Scripts/resource_data.gd" id="2_w4pd3"]
+
+[resource]
+script = ExtResource("2_w4pd3")
+id = "01"
+display_name = "Wood"
+icon = ExtResource("1_eywve")
+metadata/_custom_type_script = "uid://c5dht7rha3lqq"

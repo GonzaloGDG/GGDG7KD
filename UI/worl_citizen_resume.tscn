@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://rn0chb4d2n6n"]
+
+[ext_resource type="Script" uid="uid://ds263ed7bk51w" path="res://UI/Scripts/worl_citizen_resume.gd" id="1_b6kve"]
+[ext_resource type="Texture2D" uid="uid://cuk7ubx48gy7h" path="res://Assets/UI/PNG/barGreen_horizontalMid.png" id="1_mjoye"]
+
+[node name="WorldCitizenResume" type="Control"]
+custom_minimum_size = Vector2(48, 50)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b6kve")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(32, 50)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lifeProgresBar" type="TextureProgressBar" parent="VBoxContainer"]
+custom_minimum_size = Vector2(32, 6)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_mjoye")
+texture_progress = ExtResource("1_mjoye")
+tint_under = Color(1, 1, 1, 0.235294)
+tint_progress = Color(0.737255, 1, 1, 1)

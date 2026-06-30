@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceData" load_steps=3 format=3 uid="uid://c7ceptjid1hxh"]
+
+[ext_resource type="Texture2D" uid="uid://dkkru2ghep76d" path="res://Resources/Iconos/tools.png" id="1_asile"]
+[ext_resource type="Script" uid="uid://c5dht7rha3lqq" path="res://Resources/Scripts/resource_data.gd" id="2_t6jxd"]
+
+[resource]
+script = ExtResource("2_t6jxd")
+display_name = "Tools"
+icon = ExtResource("1_asile")
+metadata/_custom_type_script = "uid://c5dht7rha3lqq"

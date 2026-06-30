@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpkrgy6sijjku"]
+
+[ext_resource type="Theme" uid="uid://cit1k5cmt4f35" path="res://Assets/UI/UI.tres" id="1_4apjd"]
+[ext_resource type="Script" uid="uid://c817yw5xww5cq" path="res://UI/Scripts/detail_scene.gd" id="2_gl711"]
+[ext_resource type="Texture2D" uid="uid://dgpxn0ylh840g" path="res://Resources/Iconos/wheat.png" id="3_uqdfj"]
+
+[node name="DetailScene" type="HBoxContainer" node_paths=PackedStringArray("icon", "amount")]
+offset_right = 76.0
+offset_bottom = 32.0
+scale = Vector2(1.04651, 0.987805)
+theme = ExtResource("1_4apjd")
+script = ExtResource("2_gl711")
+icon = NodePath("Icon")
+amount = NodePath("Amount")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("3_uqdfj")
+stretch_mode = 3
+
+[node name="Amount" type="Label" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "0 / +1"
+horizontal_alignment = 1
+vertical_alignment = 1

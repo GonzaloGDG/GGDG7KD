@@ -1,0 +1,285 @@
+[gd_scene load_steps=12 format=3 uid="uid://igcuephieflt"]
+
+[ext_resource type="PackedScene" uid="uid://bpatyoggtfmgh" path="res://Main/map.tscn" id="1_b20jg"]
+[ext_resource type="Script" uid="uid://bse757q3dp4wl" path="res://Main/Scripts/main.gd" id="1_w1fgp"]
+[ext_resource type="Script" uid="uid://ddsmilevq6u02" path="res://Main/player.gd" id="2_qac2q"]
+[ext_resource type="Script" uid="uid://cqn67788uldvb" path="res://Main/Scripts/camera_2d.gd" id="2_wcurd"]
+[ext_resource type="Script" uid="uid://diundmyaslk5b" path="res://Main/Scripts/objects.gd" id="3_4etoo"]
+[ext_resource type="Script" uid="uid://g7tlpybeylft" path="res://Main/Scripts/selection_box.gd" id="5_4jhlv"]
+[ext_resource type="PackedScene" uid="uid://d3mgxl56hbahq" path="res://UI/UI.tscn" id="5_brlrh"]
+[ext_resource type="PackedScene" uid="uid://dew1vxmid0ayr" path="res://Objects/Resources/Tree/forest.tscn" id="6_f6fdm"]
+[ext_resource type="PackedScene" uid="uid://b4qc23im5yfow" path="res://Objects/Resources/Tree/TreeScene.tscn" id="6_ib3t1"]
+[ext_resource type="PackedScene" uid="uid://cc6cqb8dkfx3t" path="res://Objects/Resources/Mountain/MountainScene.tscn" id="8_rj11h"]
+
+[sub_resource type="GDScript" id="GDScript_w1fgp"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_w1fgp")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("2_qac2q")
+
+[node name="SelectionBox" type="Node2D" parent="."]
+script = ExtResource("5_4jhlv")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+script = ExtResource("2_wcurd")
+
+[node name="map" parent="World" instance=ExtResource("1_b20jg")]
+
+[node name="objects" type="Node2D" parent="World"]
+y_sort_enabled = true
+script = ExtResource("3_4etoo")
+
+[node name="units" type="Node2D" parent="World/objects"]
+script = SubResource("GDScript_w1fgp")
+
+[node name="cities" type="Node2D" parent="World/objects"]
+
+[node name="buildings" type="Node2D" parent="World/objects"]
+
+[node name="Resources" type="Node2D" parent="World/objects"]
+
+[node name="Trees" type="Node2D" parent="World/objects/Resources"]
+
+[node name="Forest" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(213, -7)
+
+[node name="Forest2" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(307, -71)
+
+[node name="Forest3" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(352, 115)
+
+[node name="Forest4" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(433, -52)
+
+[node name="Forest5" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(178, 194)
+
+[node name="Forest6" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(32, 222)
+
+[node name="Forest7" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(-157, 402)
+
+[node name="Forest8" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(47, 488)
+
+[node name="Forest9" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(287, 372)
+
+[node name="Forest10" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(583, 402)
+
+[node name="Forest11" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(418, 535)
+
+[node name="Forest12" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(-63, 562)
+
+[node name="Forest13" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(-21, 699)
+
+[node name="Forest14" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(507, 758)
+
+[node name="Forest15" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(262, 803)
+
+[node name="Forest16" parent="World/objects/Resources/Trees" instance=ExtResource("6_f6fdm")]
+position = Vector2(-194, 613)
+
+[node name="TreeScene11" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(82, 185)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene12" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(4.00002, 174)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene13" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(-36, -78)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene14" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(192, 80)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene15" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(206, 89)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene16" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(270, 68)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene17" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(491, 89)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene18" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(525, 112)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene19" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(500, 117)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene20" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(444, 312)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene21" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(409, 294)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene22" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(469, 237)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene23" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(-97.9999, 352)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene24" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(-147, 575)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene25" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(74, 618)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene26" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(117, 522)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene27" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(134, 539)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene28" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(256, 410)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene29" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(593, 558)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene30" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(610, 586)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene31" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(589, 592)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene32" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(576, 622)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene33" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(379, 789)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene34" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(400, 804)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene35" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(141, 780)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene36" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(100, 797)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene37" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(-125, 780)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene38" parent="World/objects/Resources/Trees" instance=ExtResource("6_ib3t1")]
+position = Vector2(-129, 795)
+scale = Vector2(0.7, 0.7)
+
+[node name="Mountains" type="Node2D" parent="World/objects/Resources"]
+
+[node name="MountainScene" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(90, -81)
+
+[node name="MountainScene2" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(315, 252)
+
+[node name="MountainScene3" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(475, 183)
+
+[node name="MountainScene4" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(413, 219)
+
+[node name="MountainScene5" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(362, 237)
+
+[node name="MountainScene6" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(96, 355)
+
+[node name="MountainScene7" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(36, 387)
+
+[node name="MountainScene8" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(-27, 396)
+
+[node name="MountainScene9" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(263, 282)
+
+[node name="MountainScene10" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(294, 515)
+
+[node name="MountainScene11" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(386, 693)
+
+[node name="MountainScene12" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(332, 719)
+
+[node name="MountainScene13" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(126, 701)
+
+[node name="MountainScene14" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(167, 669)
+
+[node name="MountainScene15" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(228, 632)
+
+[node name="MountainScene16" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(256, 589)
+
+[node name="MountainScene17" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(287, 558)
+
+[node name="MountainScene18" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(266, 680)
+
+[node name="MountainScene19" parent="World/objects/Resources/Mountains" instance=ExtResource("8_rj11h")]
+position = Vector2(290, 704)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ui" parent="CanvasLayer" instance=ExtResource("5_brlrh")]
+offset_left = 7.0
+offset_top = 11.0
+offset_bottom = -15.0
+
+[node name="Node" type="Node" parent="CanvasLayer/Ui"]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Node2D" type="Node2D" parent="Timer"]
+
+[node name="Turn" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Turn" to="." method="_on_turn_timeout"]

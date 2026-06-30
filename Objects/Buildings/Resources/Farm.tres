@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="BuildingType" load_steps=11 format=3 uid="uid://bns1f1oq4ks6w"]
+
+[ext_resource type="Script" uid="uid://dxk356hxadnxx" path="res://Objects/Buildings/Resources/ResourceQuantity.gd" id="1_3u05b"]
+[ext_resource type="Script" uid="uid://b1op325r6rp1q" path="res://Objects/Buildings/Resources/BuildingType.gd" id="2_t2dtd"]
+[ext_resource type="Resource" uid="uid://mb22qlns2y2u" path="res://Resources/CityResources/wood.tres" id="2_x3d46"]
+[ext_resource type="Resource" uid="uid://c7ceptjid1hxh" path="res://Resources/CityResources/tools.tres" id="3_rh42i"]
+[ext_resource type="Texture2D" uid="uid://wxa1qpcq3rqd" path="res://Objects/Buildings/Icon/FarmIcon.png" id="4_6nrnu"]
+[ext_resource type="Script" uid="uid://c5dht7rha3lqq" path="res://Resources/Scripts/resource_data.gd" id="5_0qv46"]
+[ext_resource type="Resource" uid="uid://cgvd5118f82lt" path="res://Resources/CityResources/wheat.tres" id="6_hw6rn"]
+[ext_resource type="Texture2D" uid="uid://k6o1wfpw2owa" path="res://Objects/Citizens/Icons/Farmer_Icon.png" id="6_rh42i"]
+
+[sub_resource type="Resource" id="Resource_toskb"]
+script = ExtResource("1_3u05b")
+resource_data = ExtResource("2_x3d46")
+quantity = 5
+metadata/_custom_type_script = "uid://dxk356hxadnxx"
+
+[sub_resource type="Resource" id="Resource_0qv46"]
+script = ExtResource("1_3u05b")
+resource_data = ExtResource("3_rh42i")
+quantity = 1
+metadata/_custom_type_script = "uid://dxk356hxadnxx"
+
+[resource]
+script = ExtResource("2_t2dtd")
+type = 0
+buiding_name = "Farm"
+icon = ExtResource("4_6nrnu")
+cost = Array[ExtResource("1_3u05b")]([SubResource("Resource_toskb"), SubResource("Resource_0qv46")])
+time_to_build = 10.0
+worker_type = 1
+worker_icon = ExtResource("6_rh42i")
+max_workers = 2
+resources = Array[ExtResource("5_0qv46")]([ExtResource("6_hw6rn")])
+resource_per_worker = 3
+maintenance_cost = 3
+metadata/_custom_type_script = "uid://b1op325r6rp1q"

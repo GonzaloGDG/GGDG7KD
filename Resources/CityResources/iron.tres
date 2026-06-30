@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceData" load_steps=3 format=3 uid="uid://qt35gfjk2xr2"]
+
+[ext_resource type="Texture2D" uid="uid://tr3lw0m8mep0" path="res://Resources/Iconos/iron.png" id="1_n5noe"]
+[ext_resource type="Script" uid="uid://c5dht7rha3lqq" path="res://Resources/Scripts/resource_data.gd" id="2_t6jxd"]
+
+[resource]
+script = ExtResource("2_t6jxd")
+display_name = "Iron"
+icon = ExtResource("1_n5noe")
+metadata/_custom_type_script = "uid://c5dht7rha3lqq"

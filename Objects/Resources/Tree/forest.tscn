@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dew1vxmid0ayr"]
+
+[ext_resource type="PackedScene" uid="uid://b4qc23im5yfow" path="res://Objects/Resources/Tree/TreeScene.tscn" id="1_lifw2"]
+
+[node name="Forest" type="Node2D"]
+
+[node name="TreeScene" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(5, -34)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene2" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(-12, -15)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene3" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(12.0001, -10)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene4" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(-23, 9)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene5" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(-0.999969, 15)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene6" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(31, -10)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene7" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(22, 16)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene8" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(43, 26)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene9" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(11, 39)
+scale = Vector2(0.7, 0.7)
+
+[node name="TreeScene10" parent="." instance=ExtResource("1_lifw2")]
+position = Vector2(-14, 33)
+scale = Vector2(0.7, 0.7)
